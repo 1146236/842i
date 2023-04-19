@@ -1,4 +1,4 @@
-git init
+git init #shefa
 git config --global user.name "GitHub ad"
 git config --global user.email "github email"
 git config --list
