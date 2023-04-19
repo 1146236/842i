@@ -1,0 +1,19 @@
+git config --global user.name "GitHub ad"
+git config --global user.email "github email"
+git config --list
+git clone https://github.com/1146236/842i.git
+git add .
+git status
+git commit -m "first commit"
+git remote add origin https://github.com/1146236/842i.git
+git branch -M main
+git push -u origin main
+git push -u origin main --force
+
+əgər fetch error verərsə:
+git pull https://github.com/1146236/842i.git
+Əgər digər error olarsa:
+git pull origin master --allow-unrelated-histories
+
+Ardınca yenidən:
+git push -u origin main --force
