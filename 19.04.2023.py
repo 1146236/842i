@@ -14,3 +14,11 @@ def square(a,b,c):
     return result
 
 print(square(3,4,5))
+
+# Leman
+def faktroial(n): #Factorial
+    p=1
+    for i in range(1 ,n+1):
+        p=p*i
+    print(p)
+faktroial(6)
