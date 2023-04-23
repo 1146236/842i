@@ -1,0 +1,48 @@
+#10-oo-100
+1.Uzunluq 9 simvol
+2.İlk 2 rəqəm
+3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
+4.Yalnız ingilis hərfləri ortada və böyük hərflər
+5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+#fidan
+a=input("Enter your car's license plate number:")
+
+if len(a) != 9:
+    raise IndexError("Number length can't be longer or shorter than 9!")
+
+if type(int(a[0:2])) is not int or type(int(a[6:9])) is not int:
+    raise ValueError("You must enter number!")
+
+x=a[3:5].isalpha()
+if x is False:
+    raise ValueError("You must enter letters!")
+
+y=a[3:5].upper()
+if y is not True:
+    raise IndexError("Letters must be capitalized!")
+
+if "-" != a[2] or "-" != a[5]:
+    raise ValueError("You must enter -")
+
+
+#fidan
+#function
+def validate(nomre):
+    if (len(nomre)!=9):
+        message="Your car's license plate number's length can't be longer or shorter than 9!"
+    elif (type(int(nomre[0:2])) is not int):
+        message="You must enter numbers!"
+    elif (type(int(nomre[6:9])) is not int):
+        message="You must enter numbers!"
+    elif (nomre[3:5].isalpha() is not True):
+        message="You must enter letters!"
+    elif (nomre[3:5].upper() is False):
+        message="Letters must be capitalized!"
+    elif ("-"!=nomre[2] or "-"!=nomre[5]):
+        message="You must enter -"
+    else:
+        message="You entered car's license plate number succesfully!"
+    return message
+
+print(validate("12-HE-203"))
