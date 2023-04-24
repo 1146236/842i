@@ -4,3 +4,36 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+#Ramazan
+"""num-10-OO-100
+index- 012345678"""
+
+def num_validation():
+    nomre=input("Nomreni yazin:\n")
+    if (type(int(nomre[0:2])) is str):             #isleyir
+        message="Seriya nomresi reqmlerden ibaretdir."  
+    elif (str(9)<nomre[0]<str(1) or str(9)<nomre[1]<str(1)):     #isleyir  
+        message="Seriya nomresini duzgun yazin."
+    elif (int(nomre[0])+int(nomre[1])==0):                #isleyir
+        message="Seriya nomresini duzgun yazin."
+    elif (nomre[2]!="-" or nomre[5]!="-"):                #isleyir
+        message="Nomre defis ile yazilir."              
+    elif (nomre[3:5].isalpha() is not True):              #isleyir
+        message="Defislerin ortasinda herfler olmalidir."
+    elif (nomre[3:5].isupper() is not True):              #isleyir
+        message= message="Nomrenin herfleri boyuk olmalidir."
+    elif (type(int(nomre[6:9])) is not int):            #isleyir
+        message="Nomre reqemlerden ibaretdir, duzgun yazin."
+    elif (str(9)<nomre[6]<str(0) or str(9)<nomre[7]<str(0) or str(9)<nomre[8]<str(0)):    #isleyir
+        message="Son 3 reqemi duzgun yazin."
+    elif (int(nomre[6])+int(nomre[7])+int(nomre[8])==0):    #isleyir
+        message="Son 3 reqemi duzgun yazin."
+    elif (len(nomre)!=9):                                 #isleyir
+        message="Nomreni duzgun yazin."
+    else:                                               #isleyir
+        message="Nomrenin yazilisi dogrudur!"
+    return message
+
+print(num_validation())
+#Ramazan
