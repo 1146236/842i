@@ -4,3 +4,26 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+
+#shefa
+def validate(carnum):
+   if (len(carnum)!=9):
+      msg="error1:("
+   elif(type(int(carnum[0:2]))is not int):
+      msg="error2:("
+   elif(type(int(carnum[6:9]))is not int):
+      mdg="error2.5:("
+   elif(carnum[2]!="-"):
+      msg="error3:("
+   elif(carnum[5]!="-"):
+      msg="error3.5:("
+   elif(carnum[3:5].upper() is not True):
+      msg="error5:("
+   elif(carnum[3:5].isalpha() is not True):
+      msg="error6:("
+   else:
+      msg="yu are totally right:)"
+   return msg
+
+print(validate("11-AK-109"))
