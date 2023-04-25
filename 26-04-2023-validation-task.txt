@@ -4,3 +4,32 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+""" Mamed
+def validation(number):
+    result = "The number is valid"
+    
+    if (len(number)!=9):
+        result = "Lenght of number must be 9 symbols"
+        return result
+
+    try :
+        first2 = int(number[0:2])
+        last3 = int(number[-3:])
+    except :
+        print("First 2 and last 3 characters should be numbers")
+    
+    if number[2]!="-" or number[5]!="-":
+        result = "use '-' as separtor"
+    
+    if number[3:5].encode().isalpha() == False:
+        result = "Letters must be from English alphabet"
+    
+    if number[3:5].isupper() == False:
+        result = "Letters must be in upper case"
+
+    return result
+
+user_input = input("Input car number --> ")
+print(validation(user_input))
+"""
