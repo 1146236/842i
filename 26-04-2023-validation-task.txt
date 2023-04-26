@@ -1,6 +1,18 @@
-#10-oo-100
-1.Uzunluq 9 simvol
-2.İlk 2 rəqəm
-3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
-4.Yalnız ingilis hərfləri ortada və böyük hərflər
-5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+def validate_az_license_plate(plate):
+    if len(plate) != 9:
+        return False
+    if not plate[:2].isdigit():
+        return False
+    if plate[2] != "-":
+        return False
+    if not plate[3:5].isalpha() or not plate[3:5].isupper():
+        return False
+    if plate[5] != "-":
+        return False
+    if not plate[6:].isdigit():
+        return False
+    return True
+ 
+print(validate_az_license_plate())
+#sexavet
+  
