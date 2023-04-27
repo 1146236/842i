@@ -4,3 +4,19 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+def validate(num):
+    if(len(num)!=9):
+        message="The length of the entered number does not match"
+    elif(type(int(num[0:1])) is not int and type(int(num[6:9])) is not int):
+        message="The numbers have entered incorrectly"
+    elif(num[3:5].isalpha() is False):
+        message="The letters have entered incorrectly"
+    elif(num[3:5].upper() is not True):
+        message="The plate series number must be capitalised"
+    elif(num[2]!="-" and num[5]!="-"):
+        message="There must be - in plate number"
+    else:
+        message="You have entered the plate series number correctly" 
+    return message   
+print(validate("80-AZ-428"))
