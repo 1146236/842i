@@ -4,3 +4,27 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+def validate(car_number):
+    if (len(car_number) != 9):
+        message = "Uzunlugu dogru girin"
+    elif (type(int(car_number[0:2])) is not int):
+        message = "Ilk iki simvol reqem olmalidir"
+    elif (car_number[2] != "-"):
+        message = "Yalnis formatda yazilib"
+    elif (type(str(car_number[3:5])) is not str):
+        message = "Ortadaki seriya herf olmalidi"
+    elif (nomre[3:5].isalpha() is not True):  # isleyir
+            message = "Defislerin ortasinda herfler olmalidir."
+    elif (nomre[3:5].isupper() is not True):
+        message= message="Nomrenin herfleri boyuk olmalidir."
+    elif (car_number[5] != "-"):
+        message = "Yalnis formatda yazilib"
+    elif (type(int(car_number[6:9])) is not int):
+        message = "Son uc simvol reqem olmalidir"
+    else:
+        message = "Nomre ugurla qeydiyyata alindi"
+    return message
+
+
+print(validate("50-AA-050"))
