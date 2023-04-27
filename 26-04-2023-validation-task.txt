@@ -4,3 +4,26 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+#leman
+def validate(carnumber):
+    if (len(carnumber)!=9):
+        NameError = "Must contain 9 characters!"
+    elif (type(int(carnumber[0:2]))is not int):
+        NameError = "Fisrt 2 characters must be numberic!"
+    elif (carnumber[2]!="-"):
+       NameError = "3th character is wrong!"
+    elif (type(str(carnumber[3:5]))is not str):
+        NameError = "4th and 5th character must be string!"
+    elif (carnumber[5]!="-"):
+        NameError = "6th character is wrong!"
+    elif (type(int(carnumber[6:9]))is not int):
+        NameError = "Last 3 characters must be numberic!"
+    elif (carnumber[3:5].isalpha() is not True):
+        NameError = "Strings are wrong!"
+    elif (carnumber[3:5].upper() is not True):
+        NameError = "Strings must be in capital letters!"
+    else:
+        NameError = "Carnumber is correct!"
+    return NameError
+
+print(validate(""))
