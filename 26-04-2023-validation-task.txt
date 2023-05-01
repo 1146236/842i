@@ -4,3 +4,22 @@
 3.2 rəqəm tire iki hərf tire 3 rəqəm standartı
 4.Yalnız ingilis hərfləri ortada və böyük hərflər
 5.Rəqəmlərin rəqəm olduğu yoxlanılsın
+
+#leman
+from selenium import webdriver
+from csv import writer
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(r'C:\Users\Leman\Documents\scraping\chromedriver')
+
+driver.get('https://www.trendyol.com/sr?q=outlet&qt=outlet&st=outlet&os=1')
+
+with open('outlets.csv', "w", encoding='utf-16') as outlets_csv:
+    a = writer(outlets_csv)
+    a.writerow(['Name                                        Price'])
+
+    outlets = driver.find_elements(By.CLASS_NAME, 'product-down')
+    for outlet in outlets:
+        name = outlet.find_element(By.CLASS_NAME, 'prdct-desc-cntnr').text.split(' ')
+        price = outlet.find_element(By.CLASS_NAME,'prc-box-dscntd').text.split(' ')
+        a.writerows([name + price])
